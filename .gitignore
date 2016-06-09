@@ -2,4 +2,5 @@
 .idea*
 \.idea*
 logs/*
+swoole-ide-helper
 swoole-ide-helper/*
