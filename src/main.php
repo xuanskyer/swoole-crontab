@@ -43,6 +43,7 @@ EOF;
     {
         $opt = getopt(self::$options, self::$longopts);
         self::spl_autoload_register();
+        SwooleTable::getInstance();
         self::params_h($opt);
         self::params_d($opt);
         self::params_p($opt);

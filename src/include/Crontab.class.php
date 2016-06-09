@@ -63,6 +63,9 @@ class Crontab
         self::daemon();
         self::set_process_name();
         self::run();
+
+        $res = SwooleTable::get('task_test');
+        var_dump($res);
         Main::log_write("启动成功");
     }
 
@@ -126,10 +129,15 @@ class Crontab
         }
         self::get_pid();
         self::write_pid();
+
+        $res = SwooleTable::get('task_test');
+        var_dump($res);
         //开启worker
         if (self::$worker) {
             (new Worker())->loadWorker();
         }
+        $res['status'] = 666;
+        SwooleTable::set('task_test', $res);
     }
 
     /**

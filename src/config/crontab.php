@@ -1,14 +1,26 @@
 <?php
 return array(
-    'taskid1' =>
+//    'taskid1' =>
+//        array(
+//            'taskname' => 'php -i',  //任务名称
+//            'rule' => '* * * * * *',//定时规则
+//            "unique" => 1, //排他数量，如果已经有这么多任务在执行，即使到了下一次执行时间，也不执行
+//            'execute'  => 'Cmd',//命令处理类
+//            'args' =>
+//                array(
+//                    'cmd'    => 'php -i',//命令
+//                    'ext' => '',//附加属性
+//                ),
+//        ),
+    'task_test' =>
         array(
-            'taskname' => 'php -i',  //任务名称
-            'rule' => '* * * * * *',//定时规则
+            'taskname' => 'test task!',  //任务名称
+            'rule' => '*/5 * * * * *',//定时规则
             "unique" => 1, //排他数量，如果已经有这么多任务在执行，即使到了下一次执行时间，也不执行
             'execute'  => 'Cmd',//命令处理类
             'args' =>
                 array(
-                    'cmd'    => 'php -i',//命令
+                    'cmd'    => 'date >> /tmp/swoole_crontab_date.log',//命令
                     'ext' => '',//附加属性
                 ),
         ),

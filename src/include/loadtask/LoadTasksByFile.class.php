@@ -60,6 +60,17 @@ class LoadTasksByFile
                     "execute" => $val["execute"],
                     "args" => $val["args"]
                 );
+                $swoole_table_key = $key;
+                $swoole_table_data = array(
+                    "taskname" => $val["taskname"],
+                    "rule" => $val["rule"],
+                    "unique" => $val["unique"],
+                    "execute" => $val["execute"],
+                    "status" => 0
+                );
+
+                $res = SwooleTable::set($swoole_table_key, $swoole_table_data);
+
             }
         }
         return $tasks;
