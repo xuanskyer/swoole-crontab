@@ -2,3 +2,4 @@
 .idea*
 \.idea*
 logs/*
+swoole-ide-helper/*
