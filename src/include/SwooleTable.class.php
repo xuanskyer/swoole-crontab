@@ -28,12 +28,27 @@ class SwooleTable
     }
 
     public static function set($key = '', $data = ''){
-        $res = self::getInstance()->set($key, $data);
+        $res = false;
+        if(!empty($key) && is_array($data) && !empty($data)){
+            foreach($data as $k => $v){
+                $serialize_data[$k] = serialize($v);
+            }
+            $res = self::getInstance()->set($key, $serialize_data);
+        }
         return $res;
     }
 
     public static function get($key = ''){
-        return self::getInstance()->get($key);
+        $unserialize_res = false;
+        if(!empty($key)){
+            $res = self::getInstance()->get($key);
+            if(!empty($res)){
+                foreach($res as $key => $val){
+                    $unserialize_res[$key] = is_string($val) ? unserialize($val) : $val;
+                }
+            }
+        }
+        return $unserialize_res;
     }
 }
 

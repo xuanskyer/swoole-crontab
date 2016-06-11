@@ -66,6 +66,8 @@ class Crontab
 
         $res = SwooleTable::get('task_test');
         var_dump($res);
+        $res = SwooleTable::get('taskid2');
+        var_dump($res);
         Main::log_write("启动成功");
     }
 
