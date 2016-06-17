@@ -93,3 +93,7 @@ Swoole-Crontab(基于Swoole扩展)
 ----------
 + 分布式运行
 + restful增删改任务
+
+7. 最新系统架构图
+
+![架构图](https://github.com/xuanskyer/swoole-crontab/blob/master/doc/architecture.png)
