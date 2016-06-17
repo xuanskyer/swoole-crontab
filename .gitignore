@@ -6,3 +6,5 @@ swoole-ide-helper
 swoole-ide-helper/*
 src/pid
 .DS_Store
+composer.lock
+vendor
